@@ -1,5 +1,5 @@
 import React from 'react'
-import { TouchableOpacity, View, Text, StyleSheet, TouchableNativeFeedback } from 'react-native';
+import { TouchableOpacity, View, Text, StyleSheet, TouchableNativeFeedback, Platform } from 'react-native';
 
 interface Props {
     title: string;
@@ -8,22 +8,45 @@ interface Props {
 }
 
 export const Fab = ({ title, onPress, position = "br" }: Props) => {
-    console.log(title)
-    return (
-        <View style={
-            [styles.fabLocation,
-            (position === "bl")
-                ? styles.left
-                : styles.right]}
-                >
-                    
-            <TouchableNativeFeedback onPress={onPress} background = {TouchableNativeFeedback.Ripple("blue",false, 30)}>
+
+    const ios = () => {
+        return (
+            <TouchableOpacity 
+            onPress={onPress}
+            activeOpacity={ 0.75 } //Valor entre 0 y 1, a mas cerca al 1, menos traslucido es
+            style={
+                [styles.fabLocation,
+                (position === "bl")
+                    ? styles.left
+                    : styles.right]}
+            >
+
                 <View style={styles.fab}>
                     <Text style={styles.fabText}>{title}</Text>
                 </View>
-            </TouchableNativeFeedback>
-        </View>
-    )
+            </TouchableOpacity>
+        )
+    }
+
+    const android = () => {
+        return (
+            <View style={
+                [styles.fabLocation,
+                (position === "bl")
+                    ? styles.left
+                    : styles.right]}
+            >
+
+                <TouchableNativeFeedback onPress={onPress} background={TouchableNativeFeedback.Ripple("blue", false, 30)}>
+                    <View style={styles.fab}>
+                        <Text style={styles.fabText}>{title}</Text>
+                    </View>
+                </TouchableNativeFeedback>
+            </View>
+        )
+    }
+
+    return (Platform.OS === "ios") ? ios() : android()
 }
 
 const styles = StyleSheet.create({

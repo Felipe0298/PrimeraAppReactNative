@@ -14,15 +14,6 @@ export const ContadorScreen = () => {
         <Fab title="+1" onPress ={() => setContador(contador + 1)} position="br"/>
         <Fab title="-1" onPress ={() => setContador(contador - 1)} position="bl"/>
 
-
-            
-
-           {/*  <TouchableOpacity onPress={() => setContador(contador - 1)} style={styles.fabLocationBL}>
-                <View style={styles.fab}> 
-                    <Text style={styles.fabText}>-1</Text>
-                </View>
-            </TouchableOpacity> */}
-
         </View>
     )
 }
