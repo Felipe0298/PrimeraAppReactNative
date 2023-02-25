@@ -11,7 +11,9 @@ export const ContadorScreen = () => {
             <Text style={styles.title}> Contador: {contador}
             </Text>
 
-        <Fab title="+1"/>
+        <Fab title="+1" onPress ={() => setContador(contador + 1)}/>
+        <Fab title="-1" onPress ={() => setContador(contador - 1)} position="bl"/>
+
 
             
 
