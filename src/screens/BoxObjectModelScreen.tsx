@@ -16,7 +16,9 @@ const styles = StyleSheet.create({
     },
     title:{
       fontSize:20,
-      padding:50,
+      paddingHorizontal:100,
+      paddingVertical:20,
+      marginHorizontal:20,
       /* width:250, */
       borderWidth:10
 
