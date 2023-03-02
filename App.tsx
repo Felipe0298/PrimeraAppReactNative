@@ -2,8 +2,9 @@ import React from 'react'
 //import { BoxObjectModelScreen } from './src/screens/BoxObjectModelScreen'
 //import { ContadorScreen } from './src/screens/ContadorScreen'
 //import { HolaMundoScreen } from './src/screens/HolaMundoScreen'
+//import { DimensionesScreen } from './src/screens/DimensionesScreen';
 import { SafeAreaView } from 'react-native/';
-import { DimensionesScreen } from './src/screens/DimensionesScreen';
+import { PositionScreen } from './src/screens/PositionScreen';
 
 export const App = () => {
   return (
@@ -11,7 +12,8 @@ export const App = () => {
       {/* <ContadorScreen /> */}
       {/* <HolaMundoScreen /> */}
       {/* <BoxObjectModelScreen /> */}
-      <DimensionesScreen/>
+      {/* <DimensionesScreen/> */}
+      <PositionScreen/>
     </SafeAreaView>
   )
 }
