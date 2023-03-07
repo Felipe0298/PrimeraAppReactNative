@@ -15,7 +15,9 @@ const styles = StyleSheet.create({
     container:{
         flex:1,
         backgroundColor:"#28C4D9",
-        justifyContent:"center"
+        flexDirection:"row",
+        alignItems:"flex-end",
+        justifyContent:"flex-end"
     },
     caja1:{
         borderWidth:2,
